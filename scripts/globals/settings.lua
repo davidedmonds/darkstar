@@ -16,9 +16,9 @@
 require("scripts/globals/common");
 
 -- Enable Extension (1= yes 0= no)
-ENABLE_COP     = 0;
-ENABLE_TOAU    = 0;
-ENABLE_WOTG    = 0;
+ENABLE_COP     = 1;
+ENABLE_TOAU    = 1;
+ENABLE_WOTG    = 1;
 ENABLE_ACP     = 0;
 ENABLE_AMK     = 0;
 ENABLE_ASA     = 0;
@@ -36,17 +36,17 @@ INITIAL_LEVEL_CAP = 50; -- The initial level cap for new players.  There seems t
 MAX_LEVEL = 75; -- Level max of the server, lowers the attainable cap by disabling Limit Break quests.
 NORMAL_MOB_MAX_LEVEL_RANGE_MIN = 81; -- Lower Bound of Max Level Range for Normal Mobs (0 = Uncapped)
 NORMAL_MOB_MAX_LEVEL_RANGE_MAX = 84; -- Upper Bound of Max Level Range for Normal Mobs (0 = Uncapped)
-START_GIL = 10; --Amount of gil given to newly created characters.
+START_GIL = 1000000; --Amount of gil given to newly created characters.
 START_INVENTORY = 30; -- Starting inventory and satchel size.  Ignores values < 30.  Do not set above 80!
 OPENING_CUTSCENE_ENABLE = 0; --Set to 1 to enable opening cutscenes, 0 to disable.
-SUBJOB_QUEST_LEVEL = 18; -- Minimum level to accept either subjob quest.  Set to 0 to start the game with subjobs unlocked.
+SUBJOB_QUEST_LEVEL = 0; -- Minimum level to accept either subjob quest.  Set to 0 to start the game with subjobs unlocked.
 ADVANCED_JOB_LEVEL = 30; -- Minimum level to accept advanced job quests.  Set to 0 to start the game with advanced jobs.
-ALL_MAPS = 0; -- Set to 1 to give starting characters all the maps.
-UNLOCK_OUTPOST_WARPS = 0; -- Set to 1 to give starting characters all outpost warps.  2 to add Tu'Lia and Tavnazia.
+ALL_MAPS = 1; -- Set to 1 to give starting characters all the maps.
+UNLOCK_OUTPOST_WARPS = 2; -- Set to 1 to give starting characters all outpost warps.  2 to add Tu'Lia and Tavnazia.
 
 SHOP_PRICE = 1.000; -- Multiplies prices in NPC shops.
 GIL_RATE   = 1.000; -- Multiplies gil earned from quests.  Won't always display in game.
-EXP_RATE   = 1.000; -- Multiplies exp earned from fov.
+EXP_RATE   = 4.000; -- Multiplies exp earned from fov.
 TABS_RATE  = 1.000; -- Multiplies tabs earned from fov.
 SAN_FAME   = 1.000; -- Multiplies fame earned from San d'Oria quests.
 BAS_FAME   = 1.000; -- Multiplies fame earned from Bastok quests.
@@ -74,10 +74,10 @@ MINING_RATE             = 0.50; -- % chance to recieve an item from mining.  Set
 
 -- SE implemented coffer/chest illusion time in order to prevent coffer farming. No-one in the same area can open a chest or coffer for loot (gil, gems & items)
 -- till a random time between MIN_ILLSION_TIME and MAX_ILLUSION_TIME. During this time players can loot keyitem and item related to quests (AF, maps... etc.)
-COFFER_MAX_ILLUSION_TIME = 3600;  -- 1 hour
-COFFER_MIN_ILLUSION_TIME = 1800;  -- 30 minutes
-CHEST_MAX_ILLUSION_TIME  = 3600;  -- 1 hour
-CHEST_MIN_ILLUSION_TIME  = 1800;  -- 30 minutes
+COFFER_MAX_ILLUSION_TIME = 600;  -- 5 mins
+COFFER_MIN_ILLUSION_TIME = 300;  -- 2.5 mins
+CHEST_MAX_ILLUSION_TIME  = 600;  -- 5 mins
+CHEST_MIN_ILLUSION_TIME  = 300;  -- 2.5 mins
 
 -- Sets spawn type for: Behemoth, Fafnir, Adamantoise, King Behemoth, Nidhog, Aspidochelone.
 -- Use 0 for timed spawns, 1 for force pop only, 2 for both
@@ -87,7 +87,7 @@ LandKingSystem_HQ = 2;
 -- DYNAMIS SETTINGS
     BETWEEN_2DYNA_WAIT_TIME = 1;        -- wait time between 2 Dynamis (in real day) min: 1 day
              DYNA_LEVEL_MIN = 65;       -- level min for entering in Dynamis
-    TIMELESS_HOURGLASS_COST = 500000;   -- cost of the timeless hourglass for Dynamis.
+    TIMELESS_HOURGLASS_COST = 500;      -- cost of the timeless hourglass for Dynamis.
      CURRENCY_EXCHANGE_RATE = 100;      -- X Tier 1 ancient currency -> 1 Tier 2, and so on.  Certain values may conflict with shop items.  Not designed to exceed 198.
 RELIC_2ND_UPGRADE_WAIT_TIME = 604800;      -- wait time for 2nd relic upgrade (stage 2 -> stage 3) in seconds. 604800s = 1 RL week.
 RELIC_3RD_UPGRADE_WAIT_TIME = 295200;      -- wait time for 3rd relic upgrade (stage 3 -> stage 4) in seconds. 295200s = 82 hours.
@@ -149,7 +149,7 @@ HALLOWEEN_2005 = 0; -- Set to 1 to Enable the 2005 version of Harvest Festival, 
 HALLOWEEN_YEAR_ROUND = 0; -- Set to 1 to have Harvest Festival initialize outside of normal times.
 
 -- MISC
-HOMEPOINT_HEAL = 0; --Set to 1 if you want Home Points to heal you like in single-player Final Fantasy games.
+HOMEPOINT_HEAL = 1; --Set to 1 if you want Home Points to heal you like in single-player Final Fantasy games.
 RIVERNE_PORTERS = 120; -- Time in seconds that Unstable Displacements in Cape Riverne stay open after trading a scale.
 LANTERNS_STAY_LIT = 1200; -- time in seconds that lanterns in the Den of Rancor stay lit.
 ENABLE_COP_ZONE_CAP=1; -- enable or disable lvl cap
