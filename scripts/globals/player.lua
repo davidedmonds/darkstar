@@ -326,6 +326,7 @@ function CharCreate(player)
 end;
 
 function onPlayerLevelUp(player)
+	player:cappAllSkills();
 end
 
 function onPlayerLevelDown(player)
