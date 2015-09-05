@@ -204,6 +204,7 @@ namespace luautils
     int32 OnPlayerLevelDown(CCharEntity* PChar);
 
     bool OnChocoboDig(CCharEntity* PChar, bool pre);                           // chocobo digging, pre = check
+     int32 isValidLS(lua_State*);                                                // Checks if LS exists
 };
 
 #endif //- _LUAUTILS_H -

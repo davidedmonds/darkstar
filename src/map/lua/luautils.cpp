@@ -134,6 +134,7 @@ int32 init()
 
 	lua_register(LuaHandle,"getCorsairRollEffect",luautils::getCorsairRollEffect);
     lua_register(LuaHandle,"getSpell",luautils::getSpell);
+		lua_register(LuaHandle,"isValidLS",luautils::isValidLS);
 
     Lunar<CLuaAbility>::Register(LuaHandle);
     Lunar<CLuaAction>::Register(LuaHandle);
@@ -3296,7 +3297,7 @@ int32 OnUseAbility(CCharEntity* PChar, CBattleEntity* PTarget, CAbility* PAbilit
 
     CLuaAbility LuaAbility(PAbility);
 	Lunar<CLuaAbility>::push(LuaHandle,&LuaAbility);
-	
+
     CLuaAction LuaAction(action);
     Lunar<CLuaAction>::push(LuaHandle, &LuaAction);
 
@@ -4365,6 +4366,24 @@ bool OnChocoboDig(CCharEntity* PChar, bool pre)
     lua_pop(LuaHandle, 1);
 
     return canDig;
+}
+
+int32 isValidLS(lua_State* L)
+{
+   const int8* linkshellName = lua_tostring(L, 1);
+   const int8* Query = "SELECT name FROM linkshells WHERE name='%s'";
+   int32 ret = Sql_Query(SqlHandle, Query, linkshellName);
+
+   if (ret != SQL_ERROR && Sql_NumRows(SqlHandle) != 0 && Sql_NextRow(SqlHandle) == SQL_SUCCESS)
+   {
+      lua_pushboolean(L, true);
+   }
+      else
+   {
+      lua_pushboolean(L, false);
+   }
+
+   return 1;
 }
 
 }; // namespace luautils
